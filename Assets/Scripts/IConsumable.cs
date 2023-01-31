@@ -2,17 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IConsumable : MonoBehaviour
+public interface IConsumable 
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    void Consume();
+    void Consume(CharacterStats stats);
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

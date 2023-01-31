@@ -27,9 +27,14 @@ public class WorldInteraction : MonoBehaviour
         RaycastHit ineractionInfo;
         if(Physics.Raycast(interactionRay, out ineractionInfo, Mathf.Infinity))
         {
+            playerAgent.updateRotation = true;
             GameObject interactedObject = ineractionInfo.collider.gameObject;
-
-            if( interactedObject.tag == "Interactable Object")
+            if ( interactedObject.tag == "Enemy")
+            {
+                Debug.Log("move to enemy");
+                interactedObject.GetComponent<Interactable>().MoveToInteraction(playerAgent);
+            }
+            else if( interactedObject.tag == "Interactable Object")
             {
                 interactedObject.GetComponent<Interactable>().MoveToInteraction(playerAgent);
             }

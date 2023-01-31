@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PotionLog : MonoBehaviour
+public class PotionLog : MonoBehaviour, IConsumable
 {
-    // Start is called before the first frame update
-    void Start()
+    public void Consume()
     {
-        
+        Debug.Log("You drank a swig of the basic potion");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Consume(CharacterStats stats)
     {
-        
+        Debug.Log("You drank a swig of the stats potion!");
     }
 }
